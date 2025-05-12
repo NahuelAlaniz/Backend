@@ -67,7 +67,7 @@ export default Server;
 
 import express, { Application } from 'express';
 import cors from 'cors';
-import { Sequelize } from 'sequelize'; // Asegúrate de importar Sequelize
+import { Sequelize } from 'sequelize';
 
 import RUser from '../routes/user';
 import RProduct from '../routes/product';
@@ -80,13 +80,7 @@ import dotenv from 'dotenv';
 // Cargar variables de entorno desde el archivo .env
 dotenv.config();
 
-// Mostrar las variables de entorno para depuración
-console.log("DB_HOST:", process.env.DB_HOST);
-console.log("DB_USER:", process.env.DB_USER);
-console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
-console.log("DB_NAME:", process.env.DB_NAME);
-console.log("DB_PORT:", process.env.DB_PORT);
-console.log("MYSQL_URL:", process.env.MYSQL_URL);
+console.log("MYSQL_URL:", process.env.MYSQL_URL); // Verifica si la variable está bien cargada
 
 class Server {
     private app: Application;
@@ -96,7 +90,11 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env['PORT'] || '3017';
+
+        // Usar MYSQL_URL directamente para la conexión con Sequelize
         this.sequelize = new Sequelize(process.env.MYSQL_URL as string);
+
+        // Llamar a los métodos de configuración
         this.midlewares();
         this.router();
         this.DBconnect();  // Conectar a la base de datos

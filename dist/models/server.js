@@ -78,7 +78,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const sequelize_1 = require("sequelize"); // Asegúrate de importar Sequelize
+const sequelize_1 = require("sequelize");
 const user_1 = __importDefault(require("../routes/user"));
 const product_1 = __importDefault(require("../routes/product"));
 const user_2 = require("./user");
@@ -86,18 +86,14 @@ const product_2 = require("./product");
 const dotenv_1 = __importDefault(require("dotenv"));
 // Cargar variables de entorno desde el archivo .env
 dotenv_1.default.config();
-// Mostrar las variables de entorno para depuración
-console.log("DB_HOST:", process.env.DB_HOST);
-console.log("DB_USER:", process.env.DB_USER);
-console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
-console.log("DB_NAME:", process.env.DB_NAME);
-console.log("DB_PORT:", process.env.DB_PORT);
-console.log("MYSQL_URL:", process.env.MYSQL_URL);
+console.log("MYSQL_URL:", process.env.MYSQL_URL); // Verifica si la variable está bien cargada
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
         this.port = process.env['PORT'] || '3017';
+        // Usar MYSQL_URL directamente para la conexión con Sequelize
         this.sequelize = new sequelize_1.Sequelize(process.env.MYSQL_URL);
+        // Llamar a los métodos de configuración
         this.midlewares();
         this.router();
         this.DBconnect(); // Conectar a la base de datos
