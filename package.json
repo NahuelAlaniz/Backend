@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon dist/index.js",
     "start": "nodemon dist/index.js",
-    "typescript": "tsc --watch"
+    "typescript": "tsc --watch",
+    "build": "ng build"
   },
   "keywords": [],
   "author": "",
