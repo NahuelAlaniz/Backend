@@ -6,9 +6,29 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon dist/index.js",
-    "start": "nodemon dist/index.js",
+    "start": "node dist/index.js",
     "typescript": "tsc --watch",
-    "build": "ng build"
+    "build": "tsc"
+  },
+  "_comentario": {
+    "Como estás usando TypeScript, lo correcto es agregar este script:": "build:tsc",
+    "Mi seccion scripts deberia quedar asi": "Todo el script de abajo con una sola letra al final",
+    "scriptsss": {
+      "testtt": "echo \"Error: no test specified\" && exit 1",
+      "devvv": "nodemon dist/index.js",
+      "starttt": "node dist/index.js",
+      "typescripttt": "tsc --watch",
+      "builddd": "tsc"
+    }
+  },
+  "_comentario2": {
+    "Antes tenias esto:": "scripts con una sola letra al final",
+    "scriptss": {
+      "testt": "echo \"Error: no test specified\" && exit 1",
+      "devv": "nodemon dist/index.js",
+      "startt": "nodemon dist/index.js",
+      "typescriptt": "tsc --watch"
+    }
   },
   "keywords": [],
   "author": "",
