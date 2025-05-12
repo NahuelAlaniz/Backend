@@ -1,4 +1,27 @@
 {
+  /*
+Esto tenia antes=
+
+"target": "es2016",
+
+esto es nuevo =
+  "include": ["./models", "./routes", "./index.ts"] "include": [".//.ts"], "exclude": ["./dist"]
+
+
+Voy a poner esto, descomentarlo me refiero:
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "ES6",  
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["./models", "./routes", "./index.ts"]
+}
+
+
+*/
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
     /* Projects */
@@ -101,5 +124,13 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+  },
+  //nUEVO
+  "include": [
+    "./**/*.ts"
+  ],
+  //nUEVO
+  "exclude": [
+    "./dist"
+  ]
 }

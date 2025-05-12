@@ -24,7 +24,8 @@ dotenv_1.default.config();
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
-        this.port = process.env.PORT || '3017';
+        //Se le modifico los corchetes
+        this.port = process.env['PORT'] || '3017';
         this.midlewares();
         this.router();
         this.DBconnect();

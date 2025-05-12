@@ -21,7 +21,9 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.port = process.env.PORT || '3017';
+
+        //Se le modifico los corchetes
+        this.port = process.env['PORT'] || '3017';
         this.midlewares();
         this.router();
         this.DBconnect();
