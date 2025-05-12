@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon dist/index.js",
+    "dev": "nodemon --exec ts-node src/index.ts",
     "start": "node dist/index.js",
     "typescript": "tsc --watch",
     "build": "tsc"
@@ -30,6 +30,16 @@
       "typescriptt": "tsc --watch"
     }
   },
+  "_comentario3": {
+    "Antes tenias esto:": "scripts con una sola letra al final",
+    "scriptsssss": {
+      "testttt": "echo \"Error: no test specified\" && exit 1",
+      "devvvv": "nodemon --exec ts-node src/index.ts",
+      "startttt": "node dist/index.js",
+      "typescriptttt": "tsc --watch",
+      "buildddd": "tsc"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -50,6 +60,7 @@
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
     "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }
