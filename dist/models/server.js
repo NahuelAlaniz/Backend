@@ -118,8 +118,14 @@ class Server {
     }
     // Middleware de configuración
     midlewares() {
+        /*
+        this.app.use(cors({
+            origin: ['http://localhost:3000', 'https://ll-vame-a-par-s-dt76.vercel.app/']  // Agrega tu frontend aquí
+        }));
+        */
         this.app.use((0, cors_1.default)({
-            origin: ['http://localhost:3000', 'https://ll-vame-a-par-s-dt76.vercel.app/'] // Agrega tu frontend aquí
+            origin: ['http://localhost:3000', 'https://ll-vame-a-par-s-dt76.vercel.app/'], // cambia por tu dominio real
+            credentials: true
         }));
         this.app.use(express_1.default.json());
     }
