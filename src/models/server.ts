@@ -91,8 +91,14 @@ class Server {
         this.app = express();
         this.port = process.env['PORT'] || '3017';
 
-        // Usar MYSQL_URL directamente para la conexión con Sequelize
+        /*
         this.sequelize = new Sequelize(process.env.MYSQL_URL as string);
+        */
+        this.sequelize = new Sequelize(process.env.MYSQL_URL as string, {
+            dialect: 'mysql',
+            logging: false,
+        });
+
 
         // Llamar a los métodos de configuración
         this.midlewares();
